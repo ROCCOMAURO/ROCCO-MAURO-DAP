@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-git init
-git add .
-git commit -m "first commit"
-git remote add origin https://github.com/ROCCOMAURO/ROCCO-MAURO-DAP/tree/main/EJER1.git
-git push -u origin master
+
 
 void main() {
   runApp(const MainApp());
