@@ -1,3 +1,3 @@
 # tp1_screens
 
-A new Flutter project.
+Implementamos listas de usuarios y sus respectivas contraseñas.
