@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:tp1_screens/screens/home_screen.dart';
-import 'package:tp1_screens/screens/login_Screen.dart';
+import 'package:EJER2_LOGIN_MAURO-BLAS-RESNIK/screens/home_screen.dart';
+import 'package:EJER2_LOGIN_MAURO-BLAS-RESNIK/screens/login_Screen.dart';
 
 final appRouter = GoRouter(routes: [
   GoRoute(
