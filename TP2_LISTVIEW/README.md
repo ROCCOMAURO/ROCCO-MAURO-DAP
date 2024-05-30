@@ -1,3 +1,3 @@
 # tp_listview
 
-A new Flutter project.
+Lista de elementos con sus widgets en home screen y una pequeña descripción.
