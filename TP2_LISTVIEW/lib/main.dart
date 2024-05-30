@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tp_listview/core/go_router.dart';
+import 'package:TP2_LISTVIEW/core/go_router.dart';
 
 void main() {
   runApp(const MainApp());
