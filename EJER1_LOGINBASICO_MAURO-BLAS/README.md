@@ -1,3 +1,3 @@
 # basic_ui
 
-A new Flutter project.
+1° Ejercicio. Login básico con widgets pero sin función alguna.
