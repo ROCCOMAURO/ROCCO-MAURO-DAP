@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:tp_listview/screens/home_screen.dart';
-import 'package:tp_listview/screens/login_screen.dart';
+import 'package:TP2_LISTVIEW/screens/home_screen.dart';
+import 'package:TP2_LISTVIEW/screens/login_screen.dart';
 
 final appRouter = GoRouter(routes: [
   GoRoute(
