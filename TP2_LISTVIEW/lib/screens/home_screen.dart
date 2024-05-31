@@ -1,46 +1,62 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
   static const String name = 'home';
-  HomeScreen({super.key});
+  
+  // Corregir el constructor
+  const HomeScreen({super.key});
 
-  List<String> deportes = [
-    'Fútbol',
-    'Rugby',
-    'Handball',
-    'Gym',
-    'Básquet',
-    'Natación',
-    'Gimnasia Artística',
-    'Tennis',
-    'Golf',
-    'Boxeo',
-    'Badminton',
-    'Rocket League',
-    'Béisbol',
-    'Softball',
-    'Waterpolo',
-    'Cricket',
-    'Brawl Stars',
-    'Nado Sincronizado',
-    'Voley',
-  ];
+@override  
+  Widget build(BuildContext context) {  
+    return Scaffold(  
+      appBar: AppBar(  
+        title: Text("Home"),  
+        backgroundColor: Colors.lightGreen
+      ),  
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: const Text('Home')),
-        body: ListView.builder(
-          itemCount: deportes.length,
-          itemBuilder: (context, index) {
-            return Card(
-              child: ListTile(
-                title: Text(deportes[index]),
-                subtitle: Text('Deporte Nº $index'),
-              ),
-            );
-          },
-        ));
-  }
-}
+      body: Column(  
+
+          mainAxisAlignment: MainAxisAlignment.center,
+    
+          children:<Widget>[  
+            Container(
+              margin: EdgeInsets.all(20.0),  
+              width: double.infinity,
+              height: 150,   
+              decoration:BoxDecoration(  
+              borderRadius:BorderRadius.circular(8), 
+               
+              color:Color.fromARGB(255, 129, 127, 248)  
+              ),  
+              child: Text("Locker 1", style: TextStyle(fontSize:20),),
+              alignment: Alignment.center    
+            ), 
+
+            Container(  
+              margin: EdgeInsets.all(20.0),  
+              width: double.infinity,
+              height: 150, 
+              decoration:BoxDecoration(  
+                  borderRadius:BorderRadius.circular(8),  
+                 color:Color.fromARGB(255, 129, 127, 248)   
+              ),  
+              child: Text("Locker 2", style: TextStyle(fontSize:20), ),
+              alignment: Alignment.center 
+            ), 
+
+            Container(  
+              margin: EdgeInsets.all(20.0),  
+              width: double.infinity,
+              height: 100,  
+              decoration:BoxDecoration(  
+              borderRadius:BorderRadius.circular(8),  
+              color:Color.fromARGB(255, 129, 127, 248)  
+              ),  
+              child: Text("Cerrar sesión",  style: TextStyle(fontSize:20),), 
+              alignment: Alignment.center 
+            )  
+          ]  
+      ),  
+    );  
+  }  
+} 
