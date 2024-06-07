@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
               text: "Locker 1",
               color: const Color.fromARGB(255, 52, 74, 218),
               icon: Icons.lock,
+              
             ),
             _buildLockerContainer(
               text: "Locker 2",
@@ -42,11 +43,8 @@ class HomeScreen extends StatelessWidget {
             icon: Icons.lock, 
             ),
 
-            _buildLogoutButton(
-              text: "Cerrar sesión",
-              color: const Color.fromARGB(255, 246, 32, 218),
-              icon: Icons.logout,
-            ),
+            
+            
           ],
         ),
       ),
@@ -66,14 +64,6 @@ class HomeScreen extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: color,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 4,
-            offset: const Offset(2, 2),
-          ),
-        ],
       ),
       alignment: Alignment.center,
       child: Row(
@@ -97,15 +87,24 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+   
+  }
+  
 
-  Widget _buildLogoutButton({
+
+class test extends StatelessWidget {
+  const test({
+    super.key,
     required String text,
     required Color color,
     required IconData icon,
-  }) {
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        foregroundColor: Colors.white, backgroundColor: color,
+        foregroundColor: const Color(40), backgroundColor: const Color(20),
         padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
         shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
@@ -113,18 +112,15 @@ class HomeScreen extends StatelessWidget {
         elevation: 5,
       ),
       onPressed: () {
-
-     
+        context.go(LoginScreen.name);     
       },
 
-      child: Row(
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 24),
-          const SizedBox(width: 10),
-          Text(
-            text,
-            style: const TextStyle(fontSize: 20),
+          Icon(Icons.lock, size: 24),
+          SizedBox(width: 10),
+          Text('Cerrar sesión',style: TextStyle(fontSize: 20),
           ),
         ],
       ),
