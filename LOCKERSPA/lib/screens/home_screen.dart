@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:tp_listview/screens/login_screen.dart';
+import 'package:go_router/go_router.dart';
+
 
 class HomeScreen extends StatelessWidget {
   static const String name = 'home';
 
   const HomeScreen({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
-        backgroundColor: const Color.fromARGB(255, 91, 92, 80),
+        title: const Text("Home", style: TextStyle(color: Colors.white),),
+        backgroundColor:const Color.fromARGB(255, 246, 32, 218),
         toolbarHeight: 75,
+
       ),
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       
@@ -28,17 +33,15 @@ class HomeScreen extends StatelessWidget {
             _buildLockerContainer(
               text: "Locker 2",
               color: const Color.fromARGB(255, 232, 74, 74),
-              icon: Icons.lock_open,
-              
+              icon: Icons.lock,
               ),
 
             _buildLockerContainer(
             text: "Locker 3", 
             color: const Color.fromARGB(201, 58, 225, 255), 
-            icon: Icons.lock,
-            
-            
+            icon: Icons.lock, 
             ),
+
             _buildLogoutButton(
               text: "Cerrar sesión",
               color: const Color.fromARGB(255, 246, 32, 218),
@@ -105,13 +108,15 @@ class HomeScreen extends StatelessWidget {
         foregroundColor: Colors.white, backgroundColor: color,
         padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16),
         ),
         elevation: 5,
       ),
       onPressed: () {
-        // Acción para cerrar sesión
+
+     
       },
+
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
