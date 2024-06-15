@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tp_listview/screens/login_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String name = 'home';
@@ -10,7 +12,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home"),
-        backgroundColor: const Color.fromARGB(255, 91, 92, 80),
+        backgroundColor: Color.fromARGB(255, 216, 99, 213),
         toolbarHeight: 75,
       ),
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
@@ -35,15 +37,40 @@ class HomeScreen extends StatelessWidget {
             _buildLockerContainer(
             text: "Locker 3", 
             color: const Color.fromARGB(201, 58, 225, 255), 
-            icon: Icons.lock,
-            
-            
+            icon: Icons.lock, 
             ),
-            _buildLogoutButton(
-              text: "Cerrar sesión",
-              color: const Color.fromARGB(255, 246, 32, 218),
-              icon: Icons.logout,
+
+
+      ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color.fromARGB(225, 60, 243, 43),
+        shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        ),
+      ),
+      onPressed: () {
+        context.pushNamed(LoginScreen.name);
+      },
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.door_back_door,
+            color: Colors.white,
+            size: 30,
+          ),
+          SizedBox(width: 10),
+          Text('Cerrar sesion',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
+          ),  
+        ],
+      ),
+    )
+            ,
           ],
         ),
       ),
@@ -95,34 +122,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildLogoutButton({
-    required String text,
-    required Color color,
-    required IconData icon,
-  }) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        foregroundColor: Colors.white, backgroundColor: color,
-        padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        elevation: 5,
-      ),
-      onPressed: () {
-        // Acción para cerrar sesión
-      },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon, size: 24),
-          const SizedBox(width: 10),
-          Text(
-            text,
-            style: const TextStyle(fontSize: 20),
-          ),
-        ],
-      ),
-    );
+
   }
-}
+
