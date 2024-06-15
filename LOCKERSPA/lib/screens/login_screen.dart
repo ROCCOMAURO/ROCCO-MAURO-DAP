@@ -28,6 +28,11 @@ class LoginScreen extends StatelessWidget {
                 decoration: const InputDecoration(
                   hintText: 'Usuario',
                   icon: Icon(Icons.person),
+                  border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                  Radius.circular(8),
+                ),
+              ),
                 ),
               ),
               const SizedBox(height: 20), 
@@ -37,6 +42,11 @@ class LoginScreen extends StatelessWidget {
                 decoration: const InputDecoration(
                 hintText: 'Contraseña',
                 icon: Icon(Icons.lock),
+                border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(8),
+                ),
+              ),
                 ),
                 obscureText: true, 
               ),
@@ -83,13 +93,7 @@ class LoginScreen extends StatelessWidget {
                           content: Text('¡Bienvenido devuelta!'),
                         );
                         ScaffoldMessenger.of(context).showSnackBar(logInExitoso);
-                      } else if (passwords[user] != textoingresadopass) {
-                        const logInFallido = SnackBar(
-                          duration: Duration(seconds: 2),
-                          content: Text('Usuario y/o contraseña incorrectos'),
-                        );
-                        ScaffoldMessenger.of(context).showSnackBar(logInFallido);
-                      }
+                      } 
                     }
                   }
                 },
