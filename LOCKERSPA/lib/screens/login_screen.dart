@@ -5,7 +5,6 @@ import 'package:tp_listview/screens/home_screen.dart';
 List<String> users = ['Blas', 'Rocco', 'Luca'];
 List<String> passwords = ['123', '456', '789'];
 
-// ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
   static const String name = 'login';
   LoginScreen({super.key});
@@ -14,43 +13,46 @@ class LoginScreen extends StatelessWidget {
   final TextEditingController passwordController = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      
-      body: Center(
-      
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+    Widget build(BuildContext context) {
+      return Scaffold(
+        
+        body: Center(
+          child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0), 
+        
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
 
-              TextField(
-                controller: userController,
-                decoration: const InputDecoration(
-                  hintText: 'Usuario',
-                  icon: Icon(Icons.person),
+                TextField(
+                  controller: userController,
+                  decoration: const InputDecoration(
+                    hintText: 'Usuario',
+                    icon: Icon(Icons.person),
+                    border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                ),
+                  ),
+                ),
+                const SizedBox(height: 20), 
+                
+                TextField(
+                  controller: passwordController,
+                  decoration: const InputDecoration(
+                  hintText: 'Contraseña',
+                  icon: Icon(Icons.lock),
                   border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(
-                  Radius.circular(8),
+                    Radius.circular(10),
+                  ),
                 ),
-              ),
-                ),
-              ),
-              const SizedBox(height: 20), 
-              
-              TextField(
-                controller: passwordController,
-                decoration: const InputDecoration(
-                hintText: 'Contraseña',
-                icon: Icon(Icons.lock),
-                border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(8),
-                ),
-              ),
-                ),
-                obscureText: true, 
+                  ),
+                  obscureText: true, 
               ),
               const SizedBox(height: 20),
+
               const Row(
                 mainAxisAlignment: MainAxisAlignment.end, 
                 children: [
@@ -65,6 +67,7 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 40),
+              
 
               ElevatedButton(
                 onPressed: () {
@@ -100,6 +103,7 @@ class LoginScreen extends StatelessWidget {
                 child: const Text('Iniciar sesión'),
               ),
             ],
+            )
           ),
         ),
     )
