@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:tp_listview/screens/home_screen.dart';
 import 'package:tp_listview/screens/locker1_screen.dart';
+import 'package:tp_listview/screens/locker2_screen.dart';
 import 'package:tp_listview/screens/login_screen.dart';
 
 final appRouter = GoRouter(routes: [
@@ -18,5 +19,10 @@ GoRoute(
     name: Locker1Screen.name,
     path: '/Locker1',
     builder: (context, state) => const Locker1Screen(),
+  ),
+  GoRoute(
+    name: Locker2Screen.name,
+    path: '/Locker2',
+    builder: (context, state) => const Locker2Screen(),
   ),
 ]);
