@@ -108,11 +108,11 @@ appBar: AppBar(
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons.lock,
-            color: Colors.white,
-            size: 30,
-          ),
+            Icon(
+              Icons.lock,
+              color: Colors.white,
+              size: 30,
+            ),
           SizedBox(width: 10),
           Text(
             'Locker 2',

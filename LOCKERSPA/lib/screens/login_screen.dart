@@ -82,7 +82,7 @@ class LoginScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(width: 100),
+                  SizedBox(width: 70),
                   Text(
                     '¿Olvidaste tu contraseña?',
                     style: TextStyle(
