@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tp_listview/screens/locker1_screen.dart';
+//import 'package:tp_listview/screens/locker1_screen.dart';
+import 'package:tp_listview/screens/locker2_screen.dart';
 import 'package:tp_listview/screens/login_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,19 +13,27 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
-        title: const Text('Home',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-        ), 
-        backgroundColor: const Color.fromARGB(255, 216, 99, 213),
-        toolbarHeight: 60,     
-        automaticallyImplyLeading: false,
-      ),
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-
+        leadingWidth: 75, //TODO Adjust leading container width
+          leading: const Center(
+          child: Text(
+            'Safe Safe',
+            style: TextStyle(fontSize: 12, 
+            fontWeight: FontWeight.bold, 
+            color: Colors.white,
+            
+            ),  
+          )
+          ),
+          automaticallyImplyLeading: false,
+          backgroundColor: Color.fromARGB(255, 69, 61, 69),
+        ),
+        
+        
+      
+     
+      backgroundColor: Color.fromARGB(255, 0, 0, 0),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -31,9 +41,19 @@ class HomeScreen extends StatelessWidget {
             children: <Widget>[ 
 
 
-   Container(
+   ElevatedButton(
+      style: ElevatedButton.styleFrom(
+          backgroundColor: Color.fromARGB(222, 0, 0, 0),  
+          shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          ),
+                ),
+      onPressed: () {
+        context.pushNamed(Locker1Screen.name);   
+    }, 
+    child: Container(
       margin: const EdgeInsets.symmetric(vertical: 10.0),
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(10.0),
       width: double.infinity,
       height: 150,
       decoration: BoxDecoration(
@@ -60,21 +80,23 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+    )
+    
     ),
           
 
     ElevatedButton(
       style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromARGB(222, 58, 58, 209), 
+          backgroundColor: Color.fromARGB(222, 0, 0, 0), 
           shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           ),
                 ),
       onPressed: () {
-        context.pushNamed(Locker1Screen.name);   
-    }, child: Container(
+        context.pushNamed(Locker2Screen.name);   
+    }, 
+    child: Container(
       margin: const EdgeInsets.symmetric(vertical: 10.0),
-      
       padding: const EdgeInsets.all(10.0),
       width: double.infinity,
       height: 150,
@@ -106,9 +128,19 @@ class HomeScreen extends StatelessWidget {
     
     ),
           
-    Container(
+    ElevatedButton(
+      style: ElevatedButton.styleFrom(
+          backgroundColor: Color.fromARGB(222, 0, 0, 0),  
+          shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          ),
+                ),
+      onPressed: () {
+        context.pushNamed(Locker2Screen.name);   
+    }, 
+    child: Container(
       margin: const EdgeInsets.symmetric(vertical: 10.0),
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(10.0),
       width: double.infinity,
       height: 150,
       decoration: BoxDecoration(
@@ -135,13 +167,15 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+    )
+    
     ),
           
           ElevatedButton(
           style: ElevatedButton.styleFrom(
           backgroundColor: const Color.fromARGB(225, 60, 243, 43),  
           shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(10),
           ),
                 ),
          onPressed: () {
