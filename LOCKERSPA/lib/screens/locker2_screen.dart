@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 //import 'package:go_router/go_router.dart';
 //import 'package:tp_listview/screens/login_screen.dart';
 
@@ -10,17 +12,30 @@ class Locker2Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Locker 2',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-        ), 
-        backgroundColor: const Color.fromARGB(255, 216, 99, 213),
-        toolbarHeight: 60,
-        automaticallyImplyLeading: true,
-      ));
+      appBar: AppBar(   centerTitle: true, title: const Text( 'Locker ', 
+      style: TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    ),
+  ),
+  automaticallyImplyLeading: true,
+  backgroundColor: const Color.fromARGB(255, 69, 61, 69),
+  ),
+  body: Container(
+      child: SfDateRangePicker(
+      startRangeSelectionColor: Colors.purple,
+      endRangeSelectionColor: Colors.blue,
+      rangeSelectionColor: Colors.grey,
+      selectionMode: DateRangePickerSelectionMode.range,
+      showActionButtons: true,
+      onSubmit: (dateRange) {
+        print(dateRange);
+      },
+
+  ),
+  ) 
+  );
 
 
   }

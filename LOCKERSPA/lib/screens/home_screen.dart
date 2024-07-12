@@ -12,29 +12,29 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       
-      appBar: AppBar(
-        leadingWidth: 75, //TODO Adjust leading container width
-          leading: const Center(
-          child: Text(
-            'Safe Safe',
-            style: TextStyle(fontSize: 12, 
-            fontWeight: FontWeight.bold, 
-            color: Colors.white,
-            
-            ),  
-          )
-          ),
+appBar: AppBar(
+  centerTitle: true,
+  title: const Text(
+    'Safe Safe',
+    style: TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    ),
+  ),
+
           automaticallyImplyLeading: false,
-          backgroundColor: Color.fromARGB(255, 69, 61, 69),
+          backgroundColor: const Color.fromARGB(255, 69, 61, 69),
         ),
         
-        
-      
      
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
-      body: Padding(
+      backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+      
+  
+  body: Padding(
         padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
 
    ElevatedButton(
       style: ElevatedButton.styleFrom(
-          backgroundColor: Color.fromARGB(222, 0, 0, 0),  
+          backgroundColor: const Color.fromARGB(222, 0, 0, 0),  
           shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           ),
@@ -87,7 +87,7 @@ class HomeScreen extends StatelessWidget {
 
     ElevatedButton(
       style: ElevatedButton.styleFrom(
-          backgroundColor: Color.fromARGB(222, 0, 0, 0), 
+          backgroundColor: const Color.fromARGB(222, 0, 0, 0), 
           shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           ),
@@ -130,13 +130,18 @@ class HomeScreen extends StatelessWidget {
           
     ElevatedButton(
       style: ElevatedButton.styleFrom(
-          backgroundColor: Color.fromARGB(222, 0, 0, 0),  
+          backgroundColor: const Color.fromARGB(222, 0, 0, 0),  
           shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           ),
                 ),
       onPressed: () {
-        context.pushNamed(Locker2Screen.name);   
+           const Locker3 = SnackBar(
+          duration: Duration(seconds: 2),
+          content: Text('¡Proximamente!'),
+          backgroundColor: Colors.deepOrange,
+          );
+    ScaffoldMessenger.of(context).showSnackBar(Locker3);
     }, 
     child: Container(
       margin: const EdgeInsets.symmetric(vertical: 10.0),

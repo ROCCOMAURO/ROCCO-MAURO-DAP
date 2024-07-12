@@ -1,27 +1,45 @@
 import 'package:flutter/material.dart';
-//import 'package:go_router/go_router.dart';
-//import 'package:tp_listview/screens/login_screen.dart';
+import 'package:table_calendar/table_calendar.dart';
 
+// ignore: must_be_immutable
 class Locker1Screen extends StatelessWidget {
   static const String name = 'Locker1';
 
-  const Locker1Screen({super.key});
+  Locker1Screen({super.key});
+
+  DateTime today = DateTime.now();
+
+  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Locker 1',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-        ), 
-        backgroundColor: const Color.fromARGB(255, 216, 99, 213),
-        toolbarHeight: 60,
+        centerTitle: true,
+        title: const Text(
+          'Locker 1',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
         automaticallyImplyLeading: true,
-      ));
-
-
+        backgroundColor: const Color.fromARGB(255, 69, 61, 69),
+      ),
+      body: Column(
+      children: [
+        TableCalendar(
+          firstDay: DateTime.utc(2024, 04, 10),
+          lastDay: DateTime.utc(2024, 12, 31), 
+          focusedDay: today,
+          calendarFormat: CalendarFormat.month,
+          headerStyle: 
+          const HeaderStyle(formatButtonVisible: false, titleCentered: true),          
+          ),
+    
+      ]
+        
+    ));
   }
-  }
+}

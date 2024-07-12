@@ -18,11 +18,11 @@ final appRouter = GoRouter(routes: [
 GoRoute(
     name: Locker1Screen.name,
     path: '/Locker1',
-    builder: (context, state) => const Locker1Screen(),
+    builder: (context, state) => Locker1Screen(),
   ),
   GoRoute(
     name: Locker2Screen.name,
     path: '/Locker2',
-    builder: (context, state) => const Locker2Screen(),
+    builder: (context, state) => Locker2Screen(),
   ),
 ]);
