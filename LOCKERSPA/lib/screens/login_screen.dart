@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tp_listview/screens/home_screen.dart';
-import 'package:flutter/src/material/icons.dart';
+
 
 List<String> users = ['Blas', 'Rocco', 'Luca'];
 List<String> passwords = ['123', '456', '789'];
@@ -171,7 +171,6 @@ class LoginScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-              
                 Text(
                     'Lucky',
                     style: TextStyle(
@@ -181,7 +180,6 @@ class LoginScreen extends StatelessWidget {
                       ),
                   ),
                
-                
                 Text(
                     'Lockers®',
                     style: TextStyle(
@@ -189,8 +187,7 @@ class LoginScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
-                  ),
-
+                  )
                 
               ],
             ),
