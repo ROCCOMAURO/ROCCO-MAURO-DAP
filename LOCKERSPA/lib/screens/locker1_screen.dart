@@ -1,22 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+// ignore: must_be_immutable
 class Locker1Screen extends StatefulWidget {
   static const String name = 'Locker1';
 
-  const Locker1Screen({super.key});
+  Locker1Screen({super.key});
+
+  List<String> horarios = [
+    '8 am',
+    '9 am',
+    '10 am',
+    '11 am',
+    '12 pm',
+    '1 pm',
+    '2 pm',
+    '3 pm',
+    '4 pm',
+    '5 pm',
+    '6 pm',
+    '7 pm',
+    '8 pm',   
+  ];
 
   @override
+  // ignore: library_private_types_in_public_api
   _Locker1ScreenState createState() => _Locker1ScreenState();
 }
 
 class _Locker1ScreenState extends State<Locker1Screen> {
   DateTime _selectedDay = DateTime.now();
-
-  List<String> horarios = [
-    '3pm',
-    'puto',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +42,12 @@ class _Locker1ScreenState extends State<Locker1Screen> {
             fontSize: 24,
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            
           ),
         ),
         automaticallyImplyLeading: true,
         backgroundColor: const Color.fromARGB(255, 69, 61, 69),
       ),
-      
-      body: 
-      Column(
+      body: Column(
         children: [
           TableCalendar(
             firstDay: DateTime.utc(2024, 04, 10),
@@ -59,33 +69,39 @@ class _Locker1ScreenState extends State<Locker1Screen> {
             },
             calendarStyle: const CalendarStyle(
               selectedDecoration: BoxDecoration(
-                color: Colors.blue, 
+                color: Colors.blue,
                 shape: BoxShape.circle,
               ),
               selectedTextStyle: TextStyle(color: Colors.white),
             ),
           ),
           const SizedBox(height: 25),
-
-
           const Text(
-                    'Horarios disponibles',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Color.fromARGB(255, 0, 0, 0),
-                      fontWeight: FontWeight.bold,
-                    ),
+            'Horarios disponibles',
+            style: TextStyle(
+              fontSize: 14,
+              color: Color.fromARGB(255, 0, 0, 0),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          // Expanded widget to make the ListView.builder take the remaining space
+          const SizedBox(height: 25),
+          Expanded(
+            child: ListView.builder(
+              itemCount: widget.horarios.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  child: ListTile(
+                    title: Text(widget.horarios[index]),
+                    
                   ),
-
-          
-
-
-
-          
-        ]));}}
-        
-
-
-          
-
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 

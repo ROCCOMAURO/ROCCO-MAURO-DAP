@@ -33,8 +33,7 @@ appBar: AppBar(
      
       backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       
-  
-  body: Padding(
+    body: Padding(
         padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -136,12 +135,12 @@ appBar: AppBar(
           ),
                 ),
       onPressed: () {
-           const Locker3 = SnackBar(
+           const locker3 = SnackBar(
           duration: Duration(seconds: 2),
           content: Text('¡Proximamente!'),
           backgroundColor: Colors.deepOrange,
           );
-    ScaffoldMessenger.of(context).showSnackBar(Locker3);
+    ScaffoldMessenger.of(context).showSnackBar(locker3);
     }, 
     child: Container(
       margin: const EdgeInsets.symmetric(vertical: 10.0),
