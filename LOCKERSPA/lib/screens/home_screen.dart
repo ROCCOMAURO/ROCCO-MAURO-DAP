@@ -38,7 +38,6 @@ appBar: AppBar(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[ 
 
-
    ElevatedButton(
       style: ElevatedButton.styleFrom(
           backgroundColor: const Color.fromARGB(222, 0, 0, 0),  
@@ -51,6 +50,7 @@ appBar: AppBar(
     }, 
     child: Container(
       padding: const EdgeInsets.all(10.0),
+      margin: const EdgeInsets.symmetric(vertical: 10.0),
       width: double.infinity,
       height: 150,
       decoration: BoxDecoration(
@@ -78,7 +78,6 @@ appBar: AppBar(
         ],
       ),
     )
-    
     ),
           
 
@@ -171,7 +170,9 @@ appBar: AppBar(
       ),
     )
     
+    
     ),
+    const SizedBox(height: 7),
           
           ElevatedButton(
           style: ElevatedButton.styleFrom(
@@ -219,16 +220,16 @@ appBar: AppBar(
                 Text(
                     '¿Consultas?',
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
-                   SizedBox(width: 70),
+                   SizedBox(width: 52),
                   Text(
                     'LuckyLockerscorp@gmail.com',
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
