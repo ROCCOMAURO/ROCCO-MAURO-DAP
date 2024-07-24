@@ -51,7 +51,6 @@ appBar: AppBar(
         context.pushNamed(Locker1Screen.name);   
     }, 
     child: Container(
-      margin: const EdgeInsets.symmetric(vertical: 10.0),
       padding: const EdgeInsets.all(10.0),
       width: double.infinity,
       height: 150,
@@ -135,7 +134,7 @@ appBar: AppBar(
           ),
                 ),
       onPressed: () {
-           const locker3 = SnackBar(
+          const locker3 = SnackBar(
           duration: Duration(seconds: 2),
           content: Text('¡Proximamente!'),
           backgroundColor: Colors.deepOrange,
@@ -187,12 +186,13 @@ appBar: AppBar(
           const deslogin = SnackBar(
                     duration: Duration(seconds: 3),
                     content: Text('Cerraste sesion'),
+                    backgroundColor: Colors.deepOrange,
                     );
                     ScaffoldMessenger.of(context).showSnackBar(deslogin);
                 },
-          child: const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           
+          child: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,          
           children: [
             Icon(
               Icons.door_back_door_outlined,
@@ -209,9 +209,37 @@ appBar: AppBar(
             ), 
             
           ],  
-                ),
-              )
-              ,
+        ),
+        ),
+        const SizedBox(height: 100),
+
+
+          const Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                    '¿Consultas?',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                   SizedBox(width: 70),
+                  Text(
+                    'LuckyLockerscorp@gmail.com',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+
+              ],
+           
+
+            ),
+                          
             ],
           ),
         ),
