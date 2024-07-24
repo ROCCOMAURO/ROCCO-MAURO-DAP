@@ -27,7 +27,7 @@ dev_dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/images/IconoLocker.jpg"
+  image_path: "assets/images/Icono.png"
 flutter: 
  uses-material-design: true
  assets: 
