@@ -48,6 +48,7 @@ appBar: AppBar(
       onPressed: () {
         context.pushNamed(Locker1Screen.name);   
     }, 
+    
     child: Container(
       padding: const EdgeInsets.all(10.0),
       margin: const EdgeInsets.symmetric(vertical: 10.0),
@@ -91,35 +92,51 @@ appBar: AppBar(
       onPressed: () {
         context.pushNamed(Locker2Screen.name);   
     }, 
-    child: Container(
-      margin: const EdgeInsets.symmetric(vertical: 10.0),
-      padding: const EdgeInsets.all(10.0),
-      width: double.infinity,
-      height: 150,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: const Color.fromARGB(222, 58, 58, 209)
-      ),
-      alignment: Alignment.center,
-      child: const Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-            Icon(
-              Icons.lock,
-              color: Colors.white,
-              size: 30,
-            ),
-          SizedBox(width: 10),
-          Text(
-            'Locker 2',
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
+    
+    child: Column(
+      children: [
+        
+        Container(
+          margin: const EdgeInsets.symmetric(vertical: 10.0),
+          padding: const EdgeInsets.all(10.0),
+          width: double.infinity,
+          height: 150,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: const Color.fromARGB(222, 58, 58, 209)
           ),
-        ],
-      ),
+          
+          
+          child: const Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                    Icon(
+                      Icons.lock,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                  SizedBox(width: 10),
+                  Text(
+                    'Locker 2',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),            
+                        
+                        
+              
+            ],
+          ),
+          
+        ),
+      ],
     )
     
     ),
@@ -130,7 +147,7 @@ appBar: AppBar(
           shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           ),
-                ),
+      ),
       onPressed: () {
           const locker3 = SnackBar(
           duration: Duration(seconds: 2),
@@ -211,7 +228,7 @@ appBar: AppBar(
           ],  
         ),
         ),
-        const SizedBox(height: 100),
+        const SizedBox(height: 80),
 
 
           const Row(

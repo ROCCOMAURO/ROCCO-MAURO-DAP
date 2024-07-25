@@ -79,7 +79,7 @@ class _Locker2ScreenState extends State<Locker2Screen> {
           const Text(
             'Horarios disponibles',
             style: TextStyle(
-              fontSize: 14,
+              fontSize: 17,
               color: Color.fromARGB(255, 0, 0, 0),
               fontWeight: FontWeight.bold,
             ),

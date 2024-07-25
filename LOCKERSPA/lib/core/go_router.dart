@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
-
+import 'package:tp_listview/screens/Crearuser.dart';
+import 'package:tp_listview/screens/contrauser.dart';
 import 'package:tp_listview/screens/home_screen.dart';
 import 'package:tp_listview/screens/locker1_screen.dart';
 import 'package:tp_listview/screens/locker2_screen.dart';
@@ -26,6 +27,16 @@ GoRoute(
     name: Locker2Screen.name,
     path: '/Locker2',
     builder: (context, state) => Locker2Screen(),
+  ),
+  GoRoute(
+    name: ContraScreen.name,
+    path: '/recucontra',
+    builder: (context, state) => const ContraScreen(),
+  ),
+  GoRoute(
+    name: UserScreen.name,
+    path: '/crearuser',
+    builder: (context, state) => const UserScreen(),
   ),
 
 

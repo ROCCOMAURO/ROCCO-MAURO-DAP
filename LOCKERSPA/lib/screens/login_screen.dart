@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tp_listview/screens/contrauser.dart';
 import 'package:tp_listview/screens/home_screen.dart';
+import 'package:tp_listview/screens/Crearuser.dart';
 
 
 List<String> users = ['Blas', 'Rocco', 'Luca'];
@@ -72,28 +74,46 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              const Row(
+              Row(
+
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  ElevatedButton(
+                  onPressed: () {
+                  context.pushNamed(UserScreen.name);   
+                  }, 
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                  ),                    
+                  child: const Text(
                     'Crear usuario',
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 14,
                       color: Colors.red,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(width: 70),
-                  Text(
+                  ),
+                  const SizedBox(width: 7),
+
+                  ElevatedButton(
+                  onPressed: () {
+                  context.pushNamed(ContraScreen.name);   
+                  }, 
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                  ),                  
+                  child: const Text(
                     '¿Olvidaste tu contraseña?',
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 14,
                       color: Colors.red,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                ],
-              ),
+                  ),             
+                 ],
+            ),
               const SizedBox(height: 40),
               
               ElevatedButton(
@@ -138,7 +158,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
               ),
-              const SizedBox(height: 70),
+              const SizedBox(height: 40),
 
       Container(
       margin: const EdgeInsets.symmetric(vertical: 10.0),
