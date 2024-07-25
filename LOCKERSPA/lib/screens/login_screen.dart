@@ -34,7 +34,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 width: 370,
                 height: 370,
-                child: Image.asset("assets/images/oso.jpg"),
+                child: Image.asset("assets/images/Safe Safe.jpg"),
               ),
               const SizedBox(height: 5),
 
