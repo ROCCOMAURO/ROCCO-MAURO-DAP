@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+
 // ignore: must_be_immutable
 class Locker2Screen extends StatefulWidget {
   static const String name = 'Locker2';
@@ -25,11 +26,12 @@ class Locker2Screen extends StatefulWidget {
 
   @override
   // ignore: library_private_types_in_public_api
-  _Locker2ScreenState createState() => _Locker2ScreenState();
+  _Locker1ScreenState createState() => _Locker1ScreenState();
 }
 
-class _Locker2ScreenState extends State<Locker2Screen> {
+class _Locker1ScreenState extends State<Locker2Screen> {
   DateTime _selectedDay = DateTime.now();
+  int _selectedIndex = 0 ; 
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class _Locker2ScreenState extends State<Locker2Screen> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Locker 1',
+          'Locker 2',
           style: TextStyle(
             fontSize: 24,
             color: Colors.white,
@@ -84,22 +86,48 @@ class _Locker2ScreenState extends State<Locker2Screen> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          
-          
           const SizedBox(height: 25),
+
           Expanded(
             child: ListView.builder(
-              itemCount: widget.horarios.length,
-              itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(
-                    title: Text(widget.horarios[index]),
-                    
-                  ),
-                );
-              },
-            ),
+        itemCount: widget.horarios.length,
+        itemBuilder: (context, index) {
+          return RadioListTile<int>(   //item seleccionables
+            title: Text(widget.horarios[index]),
+            groupValue: _selectedIndex,  //que item esta seleccionado
+            value: index, 
+            onChanged: (int? value) {
+              setState(() { //avisa que se selecciono un item y lo actualiza
+                _selectedIndex = value!;  //que unicamente se ejecute cuando se seleccione alguna opcion, es decir que value no sea null xd.
+              });
+            },
+          );
+          }
+          )
           ),
+
+
+        ElevatedButton(
+          onPressed: () {
+          const reserva = SnackBar(
+          duration: Duration(seconds: 2),
+          content: Text('Reserva realizada con éxito'),
+          backgroundColor: Colors.deepOrange,
+          );
+          ScaffoldMessenger.of(context).showSnackBar(reserva);
+          },  
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                  ),                  
+                  child: const Text(
+                    'Listo',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Color.fromARGB(255, 63, 54, 244),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  ),   
         ],
       ),
     );

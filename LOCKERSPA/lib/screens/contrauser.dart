@@ -50,7 +50,7 @@ body: ListView(
               ),
               const SizedBox(height: 20),
         
-        const TextField(
+        /*const TextField(
                   decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -64,7 +64,7 @@ body: ListView(
                   ),
                 ),
               ),
-               const SizedBox(height: 20),
+               const SizedBox(height: 20), */
     
 
         ElevatedButton(
@@ -81,7 +81,7 @@ body: ListView(
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),                  
                   child: const Text(
-                    'Listo',
+                    'Enviar código',
                     style: TextStyle(
                       fontSize: 14,
                       color: Color.fromARGB(255, 63, 54, 244),
