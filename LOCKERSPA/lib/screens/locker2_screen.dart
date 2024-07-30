@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 
 // ignore: must_be_immutable
 class Locker2Screen extends StatefulWidget {
@@ -39,7 +39,7 @@ class _Locker1ScreenState extends State<Locker2Screen> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Locker 2',
+          'Locker 1',
           style: TextStyle(
             fontSize: 24,
             color: Colors.white,
@@ -107,27 +107,60 @@ class _Locker1ScreenState extends State<Locker2Screen> {
           ),
 
 
-        ElevatedButton(
-          onPressed: () {
-          const reserva = SnackBar(
-          duration: Duration(seconds: 2),
-          content: Text('Reserva realizada con éxito'),
-          backgroundColor: Colors.deepOrange,
-          );
-          ScaffoldMessenger.of(context).showSnackBar(reserva);
-          },  
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                  ),                  
-                  child: const Text(
-                    'Listo',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Color.fromARGB(255, 63, 54, 244),
-                      fontWeight: FontWeight.bold,
-                    ),
+            ElevatedButton(
+              child: const Text('Confirmar'),
+              onPressed: () {
+                final materialBanner = MaterialBanner(
+                  elevation: 0,
+                  backgroundColor: Colors.transparent,
+                  
+                  forceActionsBelow: true,
+                  content: AwesomeSnackbarContent(
+                    title: '¡Reserva exitosa!',
+                    message:
+                        '',
+
+                    contentType: ContentType.success,
+                    
+                    inMaterialBanner: true,
                   ),
-                  ),   
+                  actions: const [SizedBox.square()],
+                );
+
+                ScaffoldMessenger.of(context)
+                  ..hideCurrentMaterialBanner()
+                  ..showMaterialBanner(materialBanner);
+              },
+            ),
+            const SizedBox(height: 10),
+
+                        ElevatedButton(
+              child: const Text('Cancelar'),
+              onPressed: () {
+                final materialBanner = MaterialBanner(
+                  elevation: 0,
+                  backgroundColor: Colors.transparent,
+                  
+                  forceActionsBelow: true,
+                  content: AwesomeSnackbarContent(
+                    title: '¡Reserva cancelada!',
+                    message:
+                        '',
+
+                    contentType: ContentType.failure,
+                    
+                    inMaterialBanner: true,
+                  ),
+                  actions: const [SizedBox.square()],
+                );
+
+                ScaffoldMessenger.of(context)
+                  ..hideCurrentMaterialBanner()
+                  ..showMaterialBanner(materialBanner);
+              },
+            ),
+            const SizedBox(height: 10),
+            
         ],
       ),
     );
