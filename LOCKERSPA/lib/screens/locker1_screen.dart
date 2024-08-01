@@ -111,26 +111,24 @@ class _Locker1ScreenState extends State<Locker1Screen> {
             ElevatedButton(
               child: const Text('Confirmar'),
               onPressed: () {
-                final materialBanner = MaterialBanner(
+                ScaffoldMessenger.of(context).showSnackBar(
+SnackBar(
+                  /// need to set following properties for best effect of awesome_snackbar_content
                   elevation: 0,
+                  duration: const Duration(seconds: 2),
+                  behavior: SnackBarBehavior.floating,
                   backgroundColor: Colors.transparent,
-                  
-                  forceActionsBelow: true,
                   content: AwesomeSnackbarContent(
-                    title: '¡Reserva exitosa!',
+                    title: 'Reserva confirmada',
                     message:
                         '',
 
+                    /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
                     contentType: ContentType.success,
-                    
-                    inMaterialBanner: true,
                   ),
-                  actions: const [SizedBox.square()],
-                );
+                )
 
-                ScaffoldMessenger.of(context)
-                  ..hideCurrentMaterialBanner()
-                  ..showMaterialBanner(materialBanner);
+);
               },
             ),
             const SizedBox(height: 10),
@@ -138,24 +136,21 @@ class _Locker1ScreenState extends State<Locker1Screen> {
               ElevatedButton(
               child: const Text('Cancelar'),
               onPressed: () {
-                final materialBanner = MaterialBanner(
+                ScaffoldMessenger.of(context).showSnackBar(
+SnackBar(                 
                   elevation: 0,
-                  backgroundColor: Colors.transparent,
-                  
-                  forceActionsBelow: true,
+                  duration: const Duration(seconds: 2),
+                  behavior: SnackBarBehavior.floating,
+                  backgroundColor: Colors.transparent,                 
                   content: AwesomeSnackbarContent(
-                    title: '¡Reserva cancelada!',
+                    title: 'Reserva cancelada',
                     message:
-                        '',
-                    contentType: ContentType.failure,                    
-                    inMaterialBanner: true,
+                        '',                   
+                    contentType: ContentType.failure,
                   ),
-                  actions: const [SizedBox.square()],
-                );
+                )
 
-                ScaffoldMessenger.of(context)
-                  ..hideCurrentMaterialBanner()
-                  ..showMaterialBanner(materialBanner);
+);
               },
             ),
             const SizedBox(height: 10),
