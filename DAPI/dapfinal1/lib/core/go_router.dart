@@ -1,7 +1,6 @@
 import 'package:dapfinal1/screens/crearuser.dart';
 import 'package:dapfinal1/screens/home_screen.dart';
 import 'package:dapfinal1/screens/login_screen.dart';
-import 'package:dapfinal1/screens/add_movie_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final appRouter = GoRouter(routes: [
@@ -20,9 +19,5 @@ final appRouter = GoRouter(routes: [
     path: '/home',
     builder: (context, state) => HomeScreen(),
   ),
-  GoRoute(
-    name: AddMovieScreen.name,
-    path: '/addMovie',
-    builder: (context, state) => AddMovieScreen(),
-  ),
 ]);
+

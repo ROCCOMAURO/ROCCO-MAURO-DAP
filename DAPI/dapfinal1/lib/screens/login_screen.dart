@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dapfinal1/screens/crearuser.dart';
 import 'package:dapfinal1/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isObscure = true;
 
   Future<void> _login() async {
-    final firestore = FirebaseFirestore.instance;
+    //final firestore = FirebaseFirestore.instance;
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
