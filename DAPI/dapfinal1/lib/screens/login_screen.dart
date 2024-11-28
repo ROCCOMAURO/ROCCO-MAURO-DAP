@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
             begin: Alignment.bottomCenter,
             end: Alignment.topCenter,
             colors: [
-              Color(0xFF81D4FA),
+              Color.fromARGB(255, 129, 212, 250),
               Color.fromARGB(255, 243, 255, 132), 
               Color(0xFF81D4FA),
             ],
@@ -104,15 +104,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Image.asset("assets/images/messisi.png"),
               ),
               const SizedBox(height: 50),
-              const Text(
-                'Logueate rey',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 4, 0, 0),
-                  fontSize: 32.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 30.0),
+          
+              
+                Center(
+                  child: const Text(
+                    'Logueate rey',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 4, 0, 0),
+                      fontSize: 32.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),              
+              const SizedBox(height: 30),
 
               TextField(
                 controller: userController,

@@ -89,13 +89,13 @@ class _UserScreenState extends State<UserScreen> {
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
         automaticallyImplyLeading: true,
-        backgroundColor: const Color.fromARGB(255, 69, 61, 69),
+        backgroundColor: const Color.fromARGB(255, 255, 222, 10),
       ),
-      backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+      backgroundColor: const Color.fromARGB(255, 129, 212, 250),
       body: ListView(
         children: [
           Padding(
