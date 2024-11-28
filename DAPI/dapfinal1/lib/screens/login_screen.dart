@@ -1,4 +1,4 @@
-//import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dapfinal1/screens/crearuser.dart';
 import 'package:dapfinal1/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -20,7 +20,6 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isObscure = true;
 
   Future<void> _login() async {
-    //final firestore = FirebaseFirestore.instance;
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -43,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
       password: password,
     );
 
-    final user = userCredential.user;      
+    final user = userCredential.user;    
 
     if (user != null) {
       await user.reload(); 
@@ -67,8 +66,6 @@ class _LoginScreenState extends State<LoginScreen> {
     } else if (e.code == 'invalid-email') {
       message = 'El correo electrónico es inválido';
     }
-
-    
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -96,9 +93,11 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          
+          child: ListView(
+            
             children: [
+
               SizedBox(
                 width: 250,
                 height: 300,

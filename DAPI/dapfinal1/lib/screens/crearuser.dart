@@ -1,8 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dapfinal1/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:go_router/go_router.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class UserScreen extends StatefulWidget {
   static const String name = 'crearusuario';
@@ -19,8 +21,7 @@ class _UserScreenState extends State<UserScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> _createUser() async {
-
-
+  final firestore = FirebaseFirestore.instance; 
   try {
     final String email = emailController.text;
     final String password = passwordController.text;
@@ -35,14 +36,20 @@ class _UserScreenState extends State<UserScreen> {
       return;
     }
 
-    await _auth.createUserWithEmailAndPassword(
+    final UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
       email: email,
       password: password,
     );
 
+
+    await firestore.collection('usuarios').doc(userCredential.user!.uid).set({
+      'email': email,
+      'password': password
+    });
+
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text('Ya podes entrar pa'),
+        content: Text('Ya podés entrar pa'),
         backgroundColor: Colors.green,
       ),
     );
@@ -68,9 +75,8 @@ class _UserScreenState extends State<UserScreen> {
       ),
     );
   }
-
-   
 }
+
 
 
   @override
